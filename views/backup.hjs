@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html class = "no-js {{env}}"> 
+<head> 
+    <meta charset = "utf-8"> 
+    <meta http - equiv = "X-UA-Compatible"
+content = "IE=edge,chrome=1"> 
+    <title> Back me up on this</title>
+    <meta name="description" content="{{text}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Tienne:400,700' rel='stylesheet' type='text/css'>
+        <style>
+            html, body {
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            #point {
+                font-family: 'Tienne', serif;
+                line-height: 1.2;
+                font-size: 30px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            #point:first-line {
+                font-weight: bold;
+            }
+        </style>
+
+    </head>
+    <body>
+        <p id="point">{{{textAsHtml}}}</p>
+        <script>
+            (function () {
+                var availWidth = document.documentElement.clientWidth - 40,
+                    availHeight = document.documentElement.clientHeight - 40,
+                    point = document.getElementById('point'),
+                    takenHeight = point.offsetHeight;
+
+                point.style.position = 'absolute';
+                point.style.fontSize = (15 * availHeight / takenHeight)+ 'px';
+
+                if (point.offsetWidth > availWidth) {
+                    point.style.fontSize = (0.9 * parseInt(point.style.fontSize, 10) * availWidth / point.offsetWidth)+ 'px';                    
+                }
+                delete point.style.position;
+
+                point.style.paddingTop = ((availHeight - point.offsetHeight) / 2 ) + 'px';
+                
+            })();
+        </script>
+    </body>
+</html>

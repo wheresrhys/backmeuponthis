@@ -1,0 +1,16 @@
+{
+    "name": "backmeuponthis",
+    "description": "Back me up on this",
+    "private": true,
+    "version": "0.1.0",
+    "engines": {
+        "node": ">= 0.10.0"
+    },
+    "main": "server.js",
+    "dependencies": {
+        "mongoose": "~3.5.5",
+        "express": "~3.3.8",
+        "hjs": "0.0.6",
+        "shortid": "^2.0.0"
+    }
+}
